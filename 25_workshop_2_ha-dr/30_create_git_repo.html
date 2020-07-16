@@ -9,24 +9,24 @@
 
     <link rel="icon" href="../images/favicon.png" type="image/png">
 
-    <title>Create Two EKS Clusters :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
+    <title>Set Up Your GIT Repository :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
 
     
-    <link href="../css/nucleus.css?1594895653" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1594895653" rel="stylesheet">
-    <link href="../css/hybrid.css?1594895653" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1594895653" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1594895653" rel="stylesheet">
-    <link href="../css/auto-complete.css?1594895653" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1594895653" rel="stylesheet">
-    <link href="../css/theme.css?1594895653" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1594895653" rel="stylesheet">
+    <link href="../css/nucleus.css?1594910217" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1594910217" rel="stylesheet">
+    <link href="../css/hybrid.css?1594910217" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1594910217" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1594910217" rel="stylesheet">
+    <link href="../css/auto-complete.css?1594910217" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1594910217" rel="stylesheet">
+    <link href="../css/theme.css?1594910217" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1594910217" rel="stylesheet">
     
-    <link href="../css/theme-mine.css?1594895653" rel="stylesheet">
+    <link href="../css/theme-mine.css?1594910217" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1594895653"></script>
+    <script src="../js/jquery-3.3.1.min.js?1594910217"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/25_workshop_2_ha-dr/30_create_two_clusters.html">
+  <body class="" data-url="/25_workshop_2_ha-dr/30_create_git_repo.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1594895653"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1594895653"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1594910217"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1594910217"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1594895653"></script>
+<script type="text/javascript" src="../js/search.js?1594910217"></script>
 
     
   </div>
@@ -796,13 +796,13 @@
  
   
     
-    <li data-nav-id="/25_workshop_2_ha-dr/20_create_git_repo.html" title="Set Up Your GIT Repository" class="dd-item 
+    <li data-nav-id="/25_workshop_2_ha-dr/20_create_two_clusters.html" title="Create Two EKS Clusters" class="dd-item 
         
         
         
         ">
-      <a href="../25_workshop_2_ha-dr/20_create_git_repo.html">
-          Set Up Your GIT Repository
+      <a href="../25_workshop_2_ha-dr/20_create_two_clusters.html">
+          Create Two EKS Clusters
           
             <i class="fas fa-check read-icon"></i>
           
@@ -824,13 +824,13 @@
  
   
     
-    <li data-nav-id="/25_workshop_2_ha-dr/30_create_two_clusters.html" title="Create Two EKS Clusters" class="dd-item 
+    <li data-nav-id="/25_workshop_2_ha-dr/30_create_git_repo.html" title="Set Up Your GIT Repository" class="dd-item 
         parent
         active
         
         ">
-      <a href="../25_workshop_2_ha-dr/30_create_two_clusters.html">
-          Create Two EKS Clusters
+      <a href="../25_workshop_2_ha-dr/30_create_git_repo.html">
+          Set Up Your GIT Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1048,6 +1048,27 @@
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html" title="Enable the Podinfo Pod to Scale Automatically" class="dd-item ">
         <a href="../25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html">
         Enable the Podinfo Pod to Scale Automatically
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html" title="Expose the Podinfo Pod Service" class="dd-item ">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html">
+        Expose the Podinfo Pod Service
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -4441,7 +4462,7 @@
             
           
           
-            <a href='../'>GitOps on EKS with Weaveworks</a> > <a href='../25_workshop_2_ha-dr.html'>Workshop Module 2: Using GitOps and EKS to Manage HA & DR</a> > Create Two EKS Clusters
+            <a href='../'>GitOps on EKS with Weaveworks</a> > <a href='../25_workshop_2_ha-dr.html'>Workshop Module 2: Using GitOps and EKS to Manage HA & DR</a> > Set Up Your GIT Repository
           
         
           
@@ -4468,33 +4489,26 @@
 
 
 
-	
+	<p>The most important ingredient using eksctl enable repo is the configuration of your repository (which will include your workload manifests, HelmReleases, etc). You can start with an empty repository and push that to Git, or use the one you intend to deploy to the cluster.</p>
 
-<h1 id="create-two-eks-clusters">Create Two EKS Clusters</h1>
-
-<p>In order to make this exercise easier, you should use two terminal windows. In <strong>Cloud9</strong>, you can open a second terminal window by clicking the &ldquo;+&rdquo; icon on the tab bar.</p>
-
-<p><img src="../images/cloud9_new_terminal.png" alt="Event Engine" /></p>
-
-<p>In each terminal, we are going to use the <code>eksctl</code> command to create a cluster, and give them specific names. I suggest simple names, like &ldquo;east&rdquo; and &ldquo;west&rdquo; or something similar. Optionally, you can add the <code>-r region_id</code> option to the command line in order to place the cluster in a specific AWS region.</p>
+<p>The main point of GitOps is to keep everything (config, alerts, dashboards, apps, literally everything) in Git and use it as a single source of truth. To keep your cluster configuration in Git, please go ahead and create an empty repository. On GitHub, for example, <a href="https://help.github.com/articles/create-a-repo" target="_blank">follow these steps.</a>.</p>
 
 
-<div class="notices warning" ><p>Not all AWS regions have all EKS capabilities enabled</p>
+<div class="notices info" ><p>In the <strong>Cloud9</strong> environment, a user SSH key pair is not automatically created. <a href="https://help.github.com/en/github/authenticating-to-github/checking-for-existing-ssh-keys" target="_blank">Use these instructions</a> to create an SSH key pair for use as your git repository deploy keys.</p>
 </div>
 
 
-<p>In the first terminal window, execute:</p>
-<pre><code>eksctl create cluster -n east --alb-ingress-access</code></pre>
-<p>and in the second terminal window, execute:</p>
-<pre><code>elsctl create cluster -n west --alb-ingress-access</code></pre>
-<p>These commands will take approximately 10 minutes to execute, so now would be a good time to take a break or ask a question.</p>
+<p>Open a new terminal in your Cloud9 workspace and run the following commands.</p>
 
-<p>When they have completed, you will have two node EKS clusters to work with.</p>
-
-
-<div class="notices warning" ><p>If you are using your own AWS account, you will need permissions to create EKS clusters plus admin rights within your EKS cluster to configure configuration rules and install agents. Ensure you have authority within your organization to do this in your tenant.</p>
-</div>
-
+<p>To create a new ssh key, run the following. Substitute your github email address where specified.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span></code></pre></div>
+<p>Start the ssh-agent in the background.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></div>
+<p>Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-add ~/.ssh/id_rsa</code></pre></div>
+<p>Then run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat ~/.ssh/id_rsa.pub</code></pre></div>
+<p>You can then create a deploy key in your repository by going to: <code>Settings &gt; Deploy keys</code>. Click on <code>Add deploy key</code>, and check <code>Allow write access</code>. Then paste your public key and click <code>Add key</code>. This will allow us to clone this repo to our Cloud9 environment. Instructions to do so <a href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account" target="_blank">are here</a>.</p>
 
 
 
@@ -5177,6 +5191,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -7250,7 +7280,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="../25_workshop_2_ha-dr/20_create_git_repo.html" title="Set Up Your GIT Repository"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../25_workshop_2_ha-dr/20_create_two_clusters.html" title="Create Two EKS Clusters"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="../25_workshop_2_ha-dr/40_gitops_enable_clusters.html" title="GitOps Enable Clusters" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -7263,19 +7293,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1594895653"></script>
-    <script src="../js/perfect-scrollbar.min.js?1594895653"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1594895653"></script>
-    <script src="../js/jquery.sticky.js?1594895653"></script>
-    <script src="../js/featherlight.min.js?1594895653"></script>
-    <script src="../js/highlight.pack.js?1594895653"></script>
+    <script src="../js/clipboard.min.js?1594910217"></script>
+    <script src="../js/perfect-scrollbar.min.js?1594910217"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1594910217"></script>
+    <script src="../js/jquery.sticky.js?1594910217"></script>
+    <script src="../js/featherlight.min.js?1594910217"></script>
+    <script src="../js/highlight.pack.js?1594910217"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1594895653"></script>
-    <script src="../js/learn.js?1594895653"></script>
-    <script src="../js/hugo-learn.js?1594895653"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1594910217"></script>
+    <script src="../js/learn.js?1594910217"></script>
+    <script src="../js/hugo-learn.js?1594910217"></script>
 
-    <link href="../mermaid/mermaid.css?1594895653" rel="stylesheet" />
-    <script src="../mermaid/mermaid.js?1594895653"></script>
+    <link href="../mermaid/mermaid.css?1594910217" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1594910217"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

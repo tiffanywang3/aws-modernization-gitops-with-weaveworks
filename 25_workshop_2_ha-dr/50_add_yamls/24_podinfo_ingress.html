@@ -12,21 +12,21 @@
     <title>Connect the Podinfo Service to the Ingress Controller :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
 
     
-    <link href="../../css/nucleus.css?1594895652" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1594895652" rel="stylesheet">
-    <link href="../../css/hybrid.css?1594895652" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1594895652" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1594895652" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1594895652" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1594895652" rel="stylesheet">
-    <link href="../../css/theme.css?1594895652" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1594895652" rel="stylesheet">
+    <link href="../../css/nucleus.css?1594910215" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1594910215" rel="stylesheet">
+    <link href="../../css/hybrid.css?1594910215" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1594910215" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1594910215" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1594910215" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1594910215" rel="stylesheet">
+    <link href="../../css/theme.css?1594910215" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1594910215" rel="stylesheet">
     
-    <link href="../../css/theme-mine.css?1594895652" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1594910215" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1594895652"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1594910215"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1594895652"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1594895652"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1594910215"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1594910215"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1594895652"></script>
+<script type="text/javascript" src="../../js/search.js?1594910215"></script>
 
     
   </div>
@@ -796,13 +796,13 @@
  
   
     
-    <li data-nav-id="/25_workshop_2_ha-dr/20_create_git_repo.html" title="Set Up Your GIT Repository" class="dd-item 
+    <li data-nav-id="/25_workshop_2_ha-dr/20_create_two_clusters.html" title="Create Two EKS Clusters" class="dd-item 
         
         
         
         ">
-      <a href="../../25_workshop_2_ha-dr/20_create_git_repo.html">
-          Set Up Your GIT Repository
+      <a href="../../25_workshop_2_ha-dr/20_create_two_clusters.html">
+          Create Two EKS Clusters
           
             <i class="fas fa-check read-icon"></i>
           
@@ -824,13 +824,13 @@
  
   
     
-    <li data-nav-id="/25_workshop_2_ha-dr/30_create_two_clusters.html" title="Create Two EKS Clusters" class="dd-item 
+    <li data-nav-id="/25_workshop_2_ha-dr/30_create_git_repo.html" title="Set Up Your GIT Repository" class="dd-item 
         
         
         
         ">
-      <a href="../../25_workshop_2_ha-dr/30_create_two_clusters.html">
-          Create Two EKS Clusters
+      <a href="../../25_workshop_2_ha-dr/30_create_git_repo.html">
+          Set Up Your GIT Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1048,6 +1048,27 @@
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html" title="Enable the Podinfo Pod to Scale Automatically" class="dd-item ">
         <a href="../../25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html">
         Enable the Podinfo Pod to Scale Automatically
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html" title="Expose the Podinfo Pod Service" class="dd-item ">
+        <a href="../../25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html">
+        Expose the Podinfo Pod Service
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -4492,23 +4513,23 @@
 <p>Ther is also a <code>path</code> parameter in this definition. The <code>path</code> parameter designates the external URL (URI) that would be required to reach this service. Each path for each specific ingress controller must be unique. For simplicity, we have mapped the root URI (&ldquo;/&rdquo;) to the service directly.</p>
 
 <p>Create a file called <strong>podinfo-ingress.yaml</strong> in your git repository containing:</p>
-<pre><code>apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: podinfo-ingress
-  namespace: podinfo
-  annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: networking.k8s.io/v1beta1
+<span style="color:#66d9ef">kind</span>: Ingress
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: podinfo-ingress
+  <span style="color:#66d9ef">namespace</span>: podinfo
+  <span style="color:#66d9ef">annotations</span>:
+    <span style="color:#66d9ef">kubernetes.io/ingress.class</span>: alb
+    <span style="color:#66d9ef">alb.ingress.kubernetes.io/scheme</span>: internet-facing
 
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /*
-        backend:
-          serviceName: podinfo
-          servicePort: 9898</code></pre>
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">rules</span>:
+  - <span style="color:#66d9ef">http</span>:
+      <span style="color:#66d9ef">paths</span>:
+      - <span style="color:#66d9ef">path</span>: /*
+        <span style="color:#66d9ef">backend</span>:
+          <span style="color:#66d9ef">serviceName</span>: podinfo
+          <span style="color:#66d9ef">servicePort</span>: <span style="color:#ae81ff">9898</span></code></pre></div>
 
 <footer class="footline">
 	
@@ -5170,6 +5191,22 @@ spec:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -7258,7 +7295,7 @@ spec:
 	 
 	 
 		
-			<a class="nav nav-prev" href="../../25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html" title="Enable the Podinfo Pod to Scale Automatically"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../../25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html" title="Expose the Podinfo Pod Service"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="../../25_workshop_2_ha-dr/60_test_ingresses.html" title="Test Ingress Settings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -7271,19 +7308,19 @@ spec:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1594895652"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1594895652"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1594895652"></script>
-    <script src="../../js/jquery.sticky.js?1594895652"></script>
-    <script src="../../js/featherlight.min.js?1594895652"></script>
-    <script src="../../js/highlight.pack.js?1594895652"></script>
+    <script src="../../js/clipboard.min.js?1594910215"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1594910215"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1594910215"></script>
+    <script src="../../js/jquery.sticky.js?1594910215"></script>
+    <script src="../../js/featherlight.min.js?1594910215"></script>
+    <script src="../../js/highlight.pack.js?1594910215"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1594895652"></script>
-    <script src="../../js/learn.js?1594895652"></script>
-    <script src="../../js/hugo-learn.js?1594895652"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1594910215"></script>
+    <script src="../../js/learn.js?1594910215"></script>
+    <script src="../../js/hugo-learn.js?1594910215"></script>
 
-    <link href="../../mermaid/mermaid.css?1594895652" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1594895652"></script>
+    <link href="../../mermaid/mermaid.css?1594910215" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1594910215"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

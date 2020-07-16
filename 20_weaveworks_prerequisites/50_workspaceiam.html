@@ -12,21 +12,21 @@
     <title>Update IAM settings for your Workspace :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
 
     
-    <link href="../css/nucleus.css?1594895652" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1594895652" rel="stylesheet">
-    <link href="../css/hybrid.css?1594895652" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1594895652" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1594895652" rel="stylesheet">
-    <link href="../css/auto-complete.css?1594895652" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1594895652" rel="stylesheet">
-    <link href="../css/theme.css?1594895652" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1594895652" rel="stylesheet">
+    <link href="../css/nucleus.css?1594910215" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1594910215" rel="stylesheet">
+    <link href="../css/hybrid.css?1594910215" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1594910215" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1594910215" rel="stylesheet">
+    <link href="../css/auto-complete.css?1594910215" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1594910215" rel="stylesheet">
+    <link href="../css/theme.css?1594910215" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1594910215" rel="stylesheet">
     
-    <link href="../css/theme-mine.css?1594895652" rel="stylesheet">
+    <link href="../css/theme-mine.css?1594910215" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1594895652"></script>
+    <script src="../js/jquery-3.3.1.min.js?1594910215"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1594895652"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1594895652"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1594910215"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1594910215"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1594895652"></script>
+<script type="text/javascript" src="../js/search.js?1594910215"></script>
 
     
   </div>
@@ -796,13 +796,13 @@
  
   
     
-    <li data-nav-id="/25_workshop_2_ha-dr/20_create_git_repo.html" title="Set Up Your GIT Repository" class="dd-item 
+    <li data-nav-id="/25_workshop_2_ha-dr/20_create_two_clusters.html" title="Create Two EKS Clusters" class="dd-item 
         
         
         
         ">
-      <a href="../25_workshop_2_ha-dr/20_create_git_repo.html">
-          Set Up Your GIT Repository
+      <a href="../25_workshop_2_ha-dr/20_create_two_clusters.html">
+          Create Two EKS Clusters
           
             <i class="fas fa-check read-icon"></i>
           
@@ -824,13 +824,13 @@
  
   
     
-    <li data-nav-id="/25_workshop_2_ha-dr/30_create_two_clusters.html" title="Create Two EKS Clusters" class="dd-item 
+    <li data-nav-id="/25_workshop_2_ha-dr/30_create_git_repo.html" title="Set Up Your GIT Repository" class="dd-item 
         
         
         
         ">
-      <a href="../25_workshop_2_ha-dr/30_create_two_clusters.html">
-          Create Two EKS Clusters
+      <a href="../25_workshop_2_ha-dr/30_create_git_repo.html">
+          Set Up Your GIT Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1048,6 +1048,27 @@
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html" title="Enable the Podinfo Pod to Scale Automatically" class="dd-item ">
         <a href="../25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html">
         Enable the Podinfo Pod to Scale Automatically
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html" title="Expose the Podinfo Pod Service" class="dd-item ">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html">
+        Expose the Podinfo Pod Service
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -4515,9 +4536,10 @@ any existing credentials file:</p>
 </div>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># install jq</span> 
-sudo yum install jq
-export ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sts get-caller-identity --output text --query Account<span style="color:#66d9ef">)</span>
-export AWS_REGION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r <span style="color:#e6db74">&#39;.region&#39;</span><span style="color:#66d9ef">)</span></code></pre></div>
+sudo yum install jq</code></pre></div>
+<p>Then, export the ACCOUNT_ID and AWS_REGION as variables:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sts get-caller-identity --output text --query Account<span style="color:#66d9ef">)</span> <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>export AWS_REGION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r <span style="color:#e6db74">&#39;.region&#39;</span><span style="color:#66d9ef">)</span></code></pre></div>
 <p>Check if AWS_REGION is set to desired region</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">test -n <span style="color:#e6db74">&#34;</span>$AWS_REGION<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo AWS_REGION is <span style="color:#e6db74">&#34;</span>$AWS_REGION<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> echo AWS_REGION is not set</code></pre></div>
 <p>Let&rsquo;s save these into bash_profile</p>
@@ -4530,9 +4552,9 @@ aws configure get default.region</code></pre></div>
 <p>Use the <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html" target="_blank">GetCallerIdentity</a> CLI command to validate that the Cloud9 IDE is using the correct IAM role.</p>
 
 <p>Just run this to try it out yourself.</p>
-<pre><code>aws sts get-caller-identity</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws sts get-caller-identity</code></pre></div>
 <p>Here is a script that will validate you have the right role.</p>
-<pre><code>aws sts get-caller-identity --query Arn | grep TeamRole -q &amp;&amp; echo &#34;IAM role valid&#34; || echo &#34;IAM role NOT valid&#34;</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws sts get-caller-identity --query Arn | grep TeamRole -q <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;IAM role valid&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;IAM role NOT valid&#34;</span></code></pre></div>
 <p>If the IAM role is not valid, <span style="color: red;"><strong>DO NOT PROCEED</strong></span>. Go back and confirm the steps on this page.</p>
 
 
@@ -5114,6 +5136,22 @@ aws configure get default.region</code></pre></div>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7297,19 +7335,19 @@ aws configure get default.region</code></pre></div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1594895652"></script>
-    <script src="../js/perfect-scrollbar.min.js?1594895652"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1594895652"></script>
-    <script src="../js/jquery.sticky.js?1594895652"></script>
-    <script src="../js/featherlight.min.js?1594895652"></script>
-    <script src="../js/highlight.pack.js?1594895652"></script>
+    <script src="../js/clipboard.min.js?1594910215"></script>
+    <script src="../js/perfect-scrollbar.min.js?1594910215"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1594910215"></script>
+    <script src="../js/jquery.sticky.js?1594910215"></script>
+    <script src="../js/featherlight.min.js?1594910215"></script>
+    <script src="../js/highlight.pack.js?1594910215"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1594895652"></script>
-    <script src="../js/learn.js?1594895652"></script>
-    <script src="../js/hugo-learn.js?1594895652"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1594910215"></script>
+    <script src="../js/learn.js?1594910215"></script>
+    <script src="../js/hugo-learn.js?1594910215"></script>
 
-    <link href="../mermaid/mermaid.css?1594895652" rel="stylesheet" />
-    <script src="../mermaid/mermaid.js?1594895652"></script>
+    <link href="../mermaid/mermaid.css?1594910215" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1594910215"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

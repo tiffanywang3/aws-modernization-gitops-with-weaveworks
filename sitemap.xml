@@ -241,6 +241,10 @@
   </url>
   
   <url>
+    <loc>/25_workshop_2_ha-dr/20_create_two_clusters.html</loc>
+  </url>
+  
+  <url>
     <loc>/50_workshop_5_accelerating_sdlc/20_enable_gitops.html</loc>
   </url>
   
@@ -285,10 +289,6 @@
   </url>
   
   <url>
-    <loc>/25_workshop_2_ha-dr/20_create_git_repo.html</loc>
-  </url>
-  
-  <url>
     <loc>/10_aws_prerequisites/20_self_paced.html</loc>
   </url>
   
@@ -323,6 +323,10 @@
   </url>
   
   <url>
+    <loc>/25_workshop_2_ha-dr/50_add_yamls/23_podinfo_service.html</loc>
+  </url>
+  
+  <url>
     <loc>/25_workshop_2_ha-dr/50_add_yamls/24_podinfo_ingress.html</loc>
   </url>
   
@@ -347,10 +351,6 @@
   
   <url>
     <loc>/40_workshop_4_hipo-teams/60_install-pod-info/30_create_podinfo.html</loc>
-  </url>
-  
-  <url>
-    <loc>/25_workshop_2_ha-dr/30_create_two_clusters.html</loc>
   </url>
   
   <url>
@@ -379,6 +379,10 @@
   
   <url>
     <loc>/60_workshop_6_ml/00_prerequisites.md/30_install_fluxctl.html</loc>
+  </url>
+  
+  <url>
+    <loc>/25_workshop_2_ha-dr/30_create_git_repo.html</loc>
   </url>
   
   <url>
