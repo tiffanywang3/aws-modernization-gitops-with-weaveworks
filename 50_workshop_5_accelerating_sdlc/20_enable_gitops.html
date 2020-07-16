@@ -7,26 +7,26 @@
     <meta name="description" content="Introduction to GitOps w/ AWS EKS">
 <meta name="author" content="Daniel Lizio-Katzen">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
 
     <title>Enable GitOps :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
 
     
-    <link href="/css/nucleus.css?1594895504" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1594895504" rel="stylesheet">
-    <link href="/css/hybrid.css?1594895504" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1594895504" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1594895504" rel="stylesheet">
-    <link href="/css/auto-complete.css?1594895504" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1594895504" rel="stylesheet">
-    <link href="/css/theme.css?1594895504" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1594895504" rel="stylesheet">
+    <link href="../css/nucleus.css?1594895653" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1594895653" rel="stylesheet">
+    <link href="../css/hybrid.css?1594895653" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1594895653" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1594895653" rel="stylesheet">
+    <link href="../css/auto-complete.css?1594895653" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1594895653" rel="stylesheet">
+    <link href="../css/theme.css?1594895653" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1594895653" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1594895504" rel="stylesheet">
+    <link href="../css/theme-mine.css?1594895653" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1594895504"></script>
+    <script src="../js/jquery-3.3.1.min.js?1594895653"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -43,7 +43,7 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a href="/" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="60%" style="padding:20px 0px;"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
+      <a href="../" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="60%" style="padding:20px 0px;"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
 
     </div>
     
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1594895504"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1594895504"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1594895653"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1594895653"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1594895504"></script>
+<script type="text/javascript" src="../js/search.js?1594895653"></script>
 
     
   </div>
@@ -83,7 +83,7 @@
         
         
         ">
-      <a href="/05_introduction.html">
+      <a href="../05_introduction.html">
           Welcome
           
             <i class="fas fa-check read-icon"></i>
@@ -108,7 +108,7 @@
   
     
       <li data-nav-id="/05_introduction/10_introduction.html" title="Why EKS?" class="dd-item ">
-        <a href="/05_introduction/10_introduction.html">
+        <a href="../05_introduction/10_introduction.html">
         Why EKS?
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -129,7 +129,7 @@
   
     
       <li data-nav-id="/05_introduction/20_about_weaveworks.html" title="About Weaveworks" class="dd-item ">
-        <a href="/05_introduction/20_about_weaveworks.html">
+        <a href="../05_introduction/20_about_weaveworks.html">
         About Weaveworks
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -161,7 +161,7 @@
         
         
         ">
-      <a href="/10_aws_prerequisites.html">
+      <a href="../10_aws_prerequisites.html">
           Start the Workshop
           
             <i class="fas fa-check read-icon"></i>
@@ -186,7 +186,7 @@
   
     
       <li data-nav-id="/10_aws_prerequisites/10_aws_event.html" title="At an AWS Event" class="dd-item ">
-        <a href="/10_aws_prerequisites/10_aws_event.html">
+        <a href="../10_aws_prerequisites/10_aws_event.html">
         At an AWS Event
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -207,7 +207,7 @@
   
     
       <li data-nav-id="/10_aws_prerequisites/20_self_paced.html" title="Using your own account" class="dd-item ">
-        <a href="/10_aws_prerequisites/20_self_paced.html">
+        <a href="../10_aws_prerequisites/20_self_paced.html">
         Using your own account
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -239,7 +239,7 @@
         
         
         ">
-      <a href="/20_weaveworks_prerequisites.html">
+      <a href="../20_weaveworks_prerequisites.html">
           Prerequisites for all GitOps Workshop Modules
           
             <i class="fas fa-check read-icon"></i>
@@ -264,7 +264,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/10_workspace.html" title="Open Workspace" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/10_workspace.html">
+        <a href="../20_weaveworks_prerequisites/10_workspace.html">
         Open Workspace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -285,7 +285,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/11_install_eksctl.html" title="Install eksctl" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/11_install_eksctl.html">
+        <a href="../20_weaveworks_prerequisites/11_install_eksctl.html">
         Install eksctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -306,7 +306,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/12_install_kubectl.html" title="Install kubectl" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/12_install_kubectl.html">
+        <a href="../20_weaveworks_prerequisites/12_install_kubectl.html">
         Install kubectl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -327,7 +327,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/13_install_helm.html" title="Install helm" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/13_install_helm.html">
+        <a href="../20_weaveworks_prerequisites/13_install_helm.html">
         Install helm
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -348,7 +348,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/14_install_fluxctl.html" title="Install fluxctl" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/14_install_fluxctl.html">
+        <a href="../20_weaveworks_prerequisites/14_install_fluxctl.html">
         Install fluxctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -369,7 +369,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/15_install_kustomize.html" title="Install kustomize" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/15_install_kustomize.html">
+        <a href="../20_weaveworks_prerequisites/15_install_kustomize.html">
         Install kustomize
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -390,7 +390,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/16_install_aws-iam.html" title="Install AWS IAM" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/16_install_aws-iam.html">
+        <a href="../20_weaveworks_prerequisites/16_install_aws-iam.html">
         Install AWS IAM
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -411,7 +411,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/17_add_the_role.html" title="Add the Required IAM Role" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/17_add_the_role.html">
+        <a href="../20_weaveworks_prerequisites/17_add_the_role.html">
         Add the Required IAM Role
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -432,7 +432,7 @@
   
     
       <li data-nav-id="/20_weaveworks_prerequisites/50_workspaceiam.html" title="Update IAM settings for your Workspace" class="dd-item ">
-        <a href="/20_weaveworks_prerequisites/50_workspaceiam.html">
+        <a href="../20_weaveworks_prerequisites/50_workspaceiam.html">
         Update IAM settings for your Workspace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -464,7 +464,7 @@
         
         
         ">
-      <a href="/22_workshop_1.html">
+      <a href="../22_workshop_1.html">
           Workshop Module 1: Introduction to GitOps on EKS
           
             <i class="fas fa-check read-icon"></i>
@@ -495,7 +495,7 @@
         
         
         ">
-      <a href="/22_workshop_1/10_create_cluster.html">
+      <a href="../22_workshop_1/10_create_cluster.html">
           Create a Cluster
           
             <i class="fas fa-check read-icon"></i>
@@ -520,7 +520,7 @@
   
     
       <li data-nav-id="/22_workshop_1/10_create_cluster/10-create-cluster.html" title="Create a Cluster with eksctl" class="dd-item ">
-        <a href="/22_workshop_1/10_create_cluster/10-create-cluster.html">
+        <a href="../22_workshop_1/10_create_cluster/10-create-cluster.html">
         Create a Cluster with eksctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -554,7 +554,7 @@
         
         
         ">
-      <a href="/22_workshop_1/20_gitops_enable.html">
+      <a href="../22_workshop_1/20_gitops_enable.html">
           GitOps Enable Your Cluster
           
             <i class="fas fa-check read-icon"></i>
@@ -579,7 +579,7 @@
   
     
       <li data-nav-id="/22_workshop_1/20_gitops_enable/31_set_up_git.html" title="Set Up Your GIT Repository" class="dd-item ">
-        <a href="/22_workshop_1/20_gitops_enable/31_set_up_git.html">
+        <a href="../22_workshop_1/20_gitops_enable/31_set_up_git.html">
         Set Up Your GIT Repository
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -600,7 +600,7 @@
   
     
       <li data-nav-id="/22_workshop_1/20_gitops_enable/32_enable_gitops.html" title="Enable Your Cluster for GitOps" class="dd-item ">
-        <a href="/22_workshop_1/20_gitops_enable/32_enable_gitops.html">
+        <a href="../22_workshop_1/20_gitops_enable/32_enable_gitops.html">
         Enable Your Cluster for GitOps
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -621,7 +621,7 @@
   
     
       <li data-nav-id="/22_workshop_1/20_gitops_enable/33_lets_check_flux.html" title="Flux and GitOps" class="dd-item ">
-        <a href="/22_workshop_1/20_gitops_enable/33_lets_check_flux.html">
+        <a href="../22_workshop_1/20_gitops_enable/33_lets_check_flux.html">
         Flux and GitOps
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -642,7 +642,7 @@
   
     
       <li data-nav-id="/22_workshop_1/20_gitops_enable/34_update_flux_for_demo.html" title="Speed up Flux for Demo" class="dd-item ">
-        <a href="/22_workshop_1/20_gitops_enable/34_update_flux_for_demo.html">
+        <a href="../22_workshop_1/20_gitops_enable/34_update_flux_for_demo.html">
         Speed up Flux for Demo
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -676,7 +676,7 @@
         
         
         ">
-      <a href="/22_workshop_1/30_deploy_sample_app.html">
+      <a href="../22_workshop_1/30_deploy_sample_app.html">
           Deploy Sock Shop Application (Optional)
           
             <i class="fas fa-check read-icon"></i>
@@ -701,7 +701,7 @@
   
     
       <li data-nav-id="/22_workshop_1/30_deploy_sample_app/41_import_k8s_labels_annotations.html" title="Setup Kubernetes labels" class="dd-item ">
-        <a href="/22_workshop_1/30_deploy_sample_app/41_import_k8s_labels_annotations.html">
+        <a href="../22_workshop_1/30_deploy_sample_app/41_import_k8s_labels_annotations.html">
         Setup Kubernetes labels
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -742,7 +742,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr.html">
+      <a href="../25_workshop_2_ha-dr.html">
           Workshop Module 2: Using GitOps and EKS to Manage HA &amp; DR
           
             <i class="fas fa-check read-icon"></i>
@@ -773,7 +773,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/01_prerequisites.html">
+      <a href="../25_workshop_2_ha-dr/01_prerequisites.html">
           Workshop Prerequisites
           
             <i class="fas fa-check read-icon"></i>
@@ -801,7 +801,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/20_create_git_repo.html">
+      <a href="../25_workshop_2_ha-dr/20_create_git_repo.html">
           Set Up Your GIT Repository
           
             <i class="fas fa-check read-icon"></i>
@@ -829,7 +829,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/30_create_two_clusters.html">
+      <a href="../25_workshop_2_ha-dr/30_create_two_clusters.html">
           Create Two EKS Clusters
           
             <i class="fas fa-check read-icon"></i>
@@ -857,7 +857,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/40_gitops_enable_clusters.html">
+      <a href="../25_workshop_2_ha-dr/40_gitops_enable_clusters.html">
           GitOps Enable Clusters
           
             <i class="fas fa-check read-icon"></i>
@@ -882,7 +882,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/40_gitops_enable_clusters/10_checkkubectl.html" title="Check kubectl" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/40_gitops_enable_clusters/10_checkkubectl.html">
+        <a href="../25_workshop_2_ha-dr/40_gitops_enable_clusters/10_checkkubectl.html">
         Check kubectl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -903,7 +903,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/40_gitops_enable_clusters/32_enable_gitops.html" title="Enable Your Clusters for GitOps" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/40_gitops_enable_clusters/32_enable_gitops.html">
+        <a href="../25_workshop_2_ha-dr/40_gitops_enable_clusters/32_enable_gitops.html">
         Enable Your Clusters for GitOps
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -937,7 +937,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/50_add_yamls.html">
+      <a href="../25_workshop_2_ha-dr/50_add_yamls.html">
           Add YAMLs to Repo
           
             <i class="fas fa-check read-icon"></i>
@@ -962,7 +962,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/10_alb_ingress.html" title="Install an Application Load Balancer Ingress Controller (RBAC)" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/50_add_yamls/10_alb_ingress.html">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/10_alb_ingress.html">
         Install an Application Load Balancer Ingress Controller (RBAC)
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -983,7 +983,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/11_alb_ingress.html" title="Install an Application Load Balancer Ingress Controller" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/50_add_yamls/11_alb_ingress.html">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/11_alb_ingress.html">
         Install an Application Load Balancer Ingress Controller
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1004,7 +1004,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/20_podinfo_introduction.html" title="Introducing Podinfo" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/50_add_yamls/20_podinfo_introduction.html">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/20_podinfo_introduction.html">
         Introducing Podinfo
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1025,7 +1025,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/21_podinfo_deploy.html" title="Deploy a Podinfo Pod" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/50_add_yamls/21_podinfo_deploy.html">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/21_podinfo_deploy.html">
         Deploy a Podinfo Pod
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1046,7 +1046,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html" title="Enable the Podinfo Pod to Scale Automatically" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/22_podinfo_hpa.html">
         Enable the Podinfo Pod to Scale Automatically
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1067,7 +1067,7 @@
   
     
       <li data-nav-id="/25_workshop_2_ha-dr/50_add_yamls/24_podinfo_ingress.html" title="Connect the Podinfo Service to the Ingress Controller" class="dd-item ">
-        <a href="/25_workshop_2_ha-dr/50_add_yamls/24_podinfo_ingress.html">
+        <a href="../25_workshop_2_ha-dr/50_add_yamls/24_podinfo_ingress.html">
         Connect the Podinfo Service to the Ingress Controller
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1101,7 +1101,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/60_test_ingresses.html">
+      <a href="../25_workshop_2_ha-dr/60_test_ingresses.html">
           Test Ingress Settings
           
             <i class="fas fa-check read-icon"></i>
@@ -1129,7 +1129,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/70_adjust_hpa.html">
+      <a href="../25_workshop_2_ha-dr/70_adjust_hpa.html">
           Adjust HPA Settings
           
             <i class="fas fa-check read-icon"></i>
@@ -1157,7 +1157,7 @@
         
         
         ">
-      <a href="/25_workshop_2_ha-dr/80_configure_route53.html">
+      <a href="../25_workshop_2_ha-dr/80_configure_route53.html">
           Configure Route53 (Optional)
           
             <i class="fas fa-check read-icon"></i>
@@ -1192,7 +1192,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc.html">
+      <a href="../30_workshop_03_grc.html">
           Workshop Module 3: Managing GRC for K8s on EKS
           
             <i class="fas fa-check read-icon"></i>
@@ -1223,7 +1223,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc/010_prerequisites.html">
+      <a href="../30_workshop_03_grc/010_prerequisites.html">
           Workshop Prerequsites
           
             <i class="fas fa-check read-icon"></i>
@@ -1251,7 +1251,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc/120_deploy_opa_gatekeeper.html">
+      <a href="../30_workshop_03_grc/120_deploy_opa_gatekeeper.html">
           Deploy OPA gatekeeper
           
             <i class="fas fa-check read-icon"></i>
@@ -1276,7 +1276,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/120_deploy_opa_gatekeeper/20_intro-to-opa.html" title="Intro to OPA" class="dd-item ">
-        <a href="/30_workshop_03_grc/120_deploy_opa_gatekeeper/20_intro-to-opa.html">
+        <a href="../30_workshop_03_grc/120_deploy_opa_gatekeeper/20_intro-to-opa.html">
         Intro to OPA
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1297,7 +1297,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/120_deploy_opa_gatekeeper/30_deploy-opa-gatekeeper.html" title="Deploy OPA gatekeeper" class="dd-item ">
-        <a href="/30_workshop_03_grc/120_deploy_opa_gatekeeper/30_deploy-opa-gatekeeper.html">
+        <a href="../30_workshop_03_grc/120_deploy_opa_gatekeeper/30_deploy-opa-gatekeeper.html">
         Deploy OPA gatekeeper
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1331,7 +1331,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc/125_create_policy_templates.html">
+      <a href="../30_workshop_03_grc/125_create_policy_templates.html">
           Create Policy Constraint Templates
           
             <i class="fas fa-check read-icon"></i>
@@ -1356,7 +1356,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/125_create_policy_templates/20_creating-contraint-template.html" title="Create Constraint Templates" class="dd-item ">
-        <a href="/30_workshop_03_grc/125_create_policy_templates/20_creating-contraint-template.html">
+        <a href="../30_workshop_03_grc/125_create_policy_templates/20_creating-contraint-template.html">
         Create Constraint Templates
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1390,7 +1390,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc/130_create_policy_contraints.html">
+      <a href="../30_workshop_03_grc/130_create_policy_contraints.html">
           Create Policy Constraints
           
             <i class="fas fa-check read-icon"></i>
@@ -1415,7 +1415,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/130_create_policy_contraints/creating-contraints.html" title="Create OPA Constraints" class="dd-item ">
-        <a href="/30_workshop_03_grc/130_create_policy_contraints/creating-contraints.html">
+        <a href="../30_workshop_03_grc/130_create_policy_contraints/creating-contraints.html">
         Create OPA Constraints
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1449,7 +1449,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc/140_test-policy-contraints.html">
+      <a href="../30_workshop_03_grc/140_test-policy-contraints.html">
           Test Policy Constraints
           
             <i class="fas fa-check read-icon"></i>
@@ -1474,7 +1474,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/140_test-policy-contraints/20_deploy-test-apps.html" title="Deploy Test Apps" class="dd-item ">
-        <a href="/30_workshop_03_grc/140_test-policy-contraints/20_deploy-test-apps.html">
+        <a href="../30_workshop_03_grc/140_test-policy-contraints/20_deploy-test-apps.html">
         Deploy Test Apps
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1508,7 +1508,7 @@
         
         
         ">
-      <a href="/30_workshop_03_grc/150_iam-groups.html">
+      <a href="../30_workshop_03_grc/150_iam-groups.html">
           Using IAM Groups to manage Kubernetes access
           
             <i class="fas fa-check read-icon"></i>
@@ -1533,7 +1533,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/10_intro.html" title="Kubernetes Authentication" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/10_intro.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/10_intro.html">
         Kubernetes Authentication
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1554,7 +1554,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/20_create-iam-roles.html" title="Create IAM Roles" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/20_create-iam-roles.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/20_create-iam-roles.html">
         Create IAM Roles
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1575,7 +1575,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/21_create-iam-groups.html" title="Create IAM Groups" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/21_create-iam-groups.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/21_create-iam-groups.html">
         Create IAM Groups
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1596,7 +1596,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/22_create_iam_users.html" title="Create IAM Users" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/22_create_iam_users.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/22_create_iam_users.html">
         Create IAM Users
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1617,7 +1617,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/30_create-k8s-rbac.html" title="Configure Kubernetes RBAC" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/30_create-k8s-rbac.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/30_create-k8s-rbac.html">
         Configure Kubernetes RBAC
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1638,7 +1638,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/31_configure-aws-auth.html" title="Configure Kubernetes Role Access" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/31_configure-aws-auth.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/31_configure-aws-auth.html">
         Configure Kubernetes Role Access
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1659,7 +1659,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/40_test-cluster-access.html" title="Test EKS access" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/40_test-cluster-access.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/40_test-cluster-access.html">
         Test EKS access
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1680,7 +1680,7 @@
   
     
       <li data-nav-id="/30_workshop_03_grc/150_iam-groups/70_cleanup.html" title="Cleanup" class="dd-item ">
-        <a href="/30_workshop_03_grc/150_iam-groups/70_cleanup.html">
+        <a href="../30_workshop_03_grc/150_iam-groups/70_cleanup.html">
         Cleanup
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1721,7 +1721,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams.html">
+      <a href="../40_workshop_4_hipo-teams.html">
           Workshop Module 4: How to Build High Performing Team Operations
           
             <i class="fas fa-check read-icon"></i>
@@ -1752,7 +1752,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams/01_prerequisites.html">
+      <a href="../40_workshop_4_hipo-teams/01_prerequisites.html">
           Workshop Prerequisites
           
             <i class="fas fa-check read-icon"></i>
@@ -1780,7 +1780,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams/20_create-eks-cluster.html">
+      <a href="../40_workshop_4_hipo-teams/20_create-eks-cluster.html">
           Create EKS Cluster
           
             <i class="fas fa-check read-icon"></i>
@@ -1808,7 +1808,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams/30_gitops_enable_clusters.html">
+      <a href="../40_workshop_4_hipo-teams/30_gitops_enable_clusters.html">
           GitOps Enable Clusters
           
             <i class="fas fa-check read-icon"></i>
@@ -1833,7 +1833,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/30_gitops_enable_clusters/10_create-github.html" title="Create GitHub Repository" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/30_gitops_enable_clusters/10_create-github.html">
+        <a href="../40_workshop_4_hipo-teams/30_gitops_enable_clusters/10_create-github.html">
         Create GitHub Repository
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1854,7 +1854,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/30_gitops_enable_clusters/30_enable_gitops.html" title="Enable Your Cluster for GitOps" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/30_gitops_enable_clusters/30_enable_gitops.html">
+        <a href="../40_workshop_4_hipo-teams/30_gitops_enable_clusters/30_enable_gitops.html">
         Enable Your Cluster for GitOps
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1875,7 +1875,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/30_gitops_enable_clusters/40_verify_flux_op.html" title="Verify Flux and Helm are Operational" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/30_gitops_enable_clusters/40_verify_flux_op.html">
+        <a href="../40_workshop_4_hipo-teams/30_gitops_enable_clusters/40_verify_flux_op.html">
         Verify Flux and Helm are Operational
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1909,7 +1909,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams/40_install-app-mesh.html">
+      <a href="../40_workshop_4_hipo-teams/40_install-app-mesh.html">
           Install App Mesh
           
             <i class="fas fa-check read-icon"></i>
@@ -1934,7 +1934,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/40_install-app-mesh/10_create_namespace.html" title="Create the namespace" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/40_install-app-mesh/10_create_namespace.html">
+        <a href="../40_workshop_4_hipo-teams/40_install-app-mesh/10_create_namespace.html">
         Create the namespace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1955,7 +1955,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/40_install-app-mesh/20_install_appmesh_crds.html" title="Install App Mesh CRDs" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/40_install-app-mesh/20_install_appmesh_crds.html">
+        <a href="../40_workshop_4_hipo-teams/40_install-app-mesh/20_install_appmesh_crds.html">
         Install App Mesh CRDs
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1976,7 +1976,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/40_install-app-mesh/30_install_appmesh_controller.html" title="Install App Mesh Controller" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/40_install-app-mesh/30_install_appmesh_controller.html">
+        <a href="../40_workshop_4_hipo-teams/40_install-app-mesh/30_install_appmesh_controller.html">
         Install App Mesh Controller
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -1997,7 +1997,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/40_install-app-mesh/40_install_appmesh_injector.html" title="Install App Mesh Injector" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/40_install-app-mesh/40_install_appmesh_injector.html">
+        <a href="../40_workshop_4_hipo-teams/40_install-app-mesh/40_install_appmesh_injector.html">
         Install App Mesh Injector
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2018,7 +2018,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/40_install-app-mesh/50_install_appmesh_prometheus.html" title="Install Prometheus for App Mesh" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/40_install-app-mesh/50_install_appmesh_prometheus.html">
+        <a href="../40_workshop_4_hipo-teams/40_install-app-mesh/50_install_appmesh_prometheus.html">
         Install Prometheus for App Mesh
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2039,7 +2039,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/40_install-app-mesh/90_verify_mesh.html" title="Verify the Service Mesh is Active" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/40_install-app-mesh/90_verify_mesh.html">
+        <a href="../40_workshop_4_hipo-teams/40_install-app-mesh/90_verify_mesh.html">
         Verify the Service Mesh is Active
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2073,7 +2073,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams/50_install_container_insights.html">
+      <a href="../40_workshop_4_hipo-teams/50_install_container_insights.html">
           Install Container Insights
           
             <i class="fas fa-check read-icon"></i>
@@ -2098,7 +2098,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/50_install_container_insights/10_create_namespace.html" title="Create the namespace" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/50_install_container_insights/10_create_namespace.html">
+        <a href="../40_workshop_4_hipo-teams/50_install_container_insights/10_create_namespace.html">
         Create the namespace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2119,7 +2119,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/50_install_container_insights/20_install_container_insights.html" title="Install Container Insights" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/50_install_container_insights/20_install_container_insights.html">
+        <a href="../40_workshop_4_hipo-teams/50_install_container_insights/20_install_container_insights.html">
         Install Container Insights
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2140,7 +2140,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/50_install_container_insights/30_verify_container_insights.html" title="Verify metric collection" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/50_install_container_insights/30_verify_container_insights.html">
+        <a href="../40_workshop_4_hipo-teams/50_install_container_insights/30_verify_container_insights.html">
         Verify metric collection
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2161,7 +2161,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/50_install_container_insights/40_explore_container_insights.html" title="Explore Container Insights" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/50_install_container_insights/40_explore_container_insights.html">
+        <a href="../40_workshop_4_hipo-teams/50_install_container_insights/40_explore_container_insights.html">
         Explore Container Insights
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2195,7 +2195,7 @@
         
         
         ">
-      <a href="/40_workshop_4_hipo-teams/60_install-pod-info.html">
+      <a href="../40_workshop_4_hipo-teams/60_install-pod-info.html">
           Install Sample App (PodInfo)
           
             <i class="fas fa-check read-icon"></i>
@@ -2220,7 +2220,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/10_about_podinfo.html" title="Introducing Podinfo" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/10_about_podinfo.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/10_about_podinfo.html">
         Introducing Podinfo
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2241,7 +2241,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/20_create_namespace.html" title="Create the namespace" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/20_create_namespace.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/20_create_namespace.html">
         Create the namespace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2262,7 +2262,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/30_create_podinfo.html" title="Create PodInfo" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/30_create_podinfo.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/30_create_podinfo.html">
         Create PodInfo
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2283,7 +2283,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/40_add_app_mesh.html" title="Create App Mesh Resources" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/40_add_app_mesh.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/40_add_app_mesh.html">
         Create App Mesh Resources
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2304,7 +2304,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/50_verify_app_mesh.html" title="Verify App Mesh Resources" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/50_verify_app_mesh.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/50_verify_app_mesh.html">
         Verify App Mesh Resources
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2325,7 +2325,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/60_test_routing.html" title="Test the routing" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/60_test_routing.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/60_test_routing.html">
         Test the routing
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2346,7 +2346,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/70_update_routing.html" title="Update the routing" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/70_update_routing.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/70_update_routing.html">
         Update the routing
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2367,7 +2367,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/80_revert_routing.html" title="Revert the routing" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/80_revert_routing.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/80_revert_routing.html">
         Revert the routing
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2388,7 +2388,7 @@
   
     
       <li data-nav-id="/40_workshop_4_hipo-teams/60_install-pod-info/90_app_mesh_perf.html" title="Performance Monitoring" class="dd-item ">
-        <a href="/40_workshop_4_hipo-teams/60_install-pod-info/90_app_mesh_perf.html">
+        <a href="../40_workshop_4_hipo-teams/60_install-pod-info/90_app_mesh_perf.html">
         Performance Monitoring
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2429,7 +2429,7 @@
         
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc.html">
+      <a href="../50_workshop_5_accelerating_sdlc.html">
           Workshop Module 5: Accelerating the Software Development Lifecycle
           
             <i class="fas fa-check read-icon"></i>
@@ -2460,7 +2460,7 @@
         
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md.html">
+      <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md.html">
           Prerequisites
           
             <i class="fas fa-check read-icon"></i>
@@ -2485,7 +2485,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/01_create_workspace.html" title="AWS Workshop Portal" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/01_create_workspace.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/01_create_workspace.html">
         AWS Workshop Portal
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2506,7 +2506,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/10_install_eksctl.html" title="Install eksctl" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/10_install_eksctl.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/10_install_eksctl.html">
         Install eksctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2527,7 +2527,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/20_install_kubectl.html" title="Install kubectl" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/20_install_kubectl.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/20_install_kubectl.html">
         Install kubectl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2548,7 +2548,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/30_install_fluxctl.html" title="Install fluxctl" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/30_install_fluxctl.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/30_install_fluxctl.html">
         Install fluxctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2569,7 +2569,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/40_install_kustomize.html" title="Install kustomize" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/40_install_kustomize.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/40_install_kustomize.html">
         Install kustomize
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2590,7 +2590,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/50_install_aws_iam_auth.html" title="Install aws iam authenticator" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/50_install_aws_iam_auth.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/50_install_aws_iam_auth.html">
         Install aws iam authenticator
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2611,7 +2611,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/60_add_iam_role.html" title="Add the Required IAM Role" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/60_add_iam_role.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/60_add_iam_role.html">
         Add the Required IAM Role
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2632,7 +2632,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/70_workspace_iam.html" title="Update IAM settings for your Workspace" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/00_prerequisites.md/70_workspace_iam.html">
+        <a href="../50_workshop_5_accelerating_sdlc/00_prerequisites.md/70_workspace_iam.html">
         Update IAM settings for your Workspace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2666,7 +2666,7 @@
         
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc/10_create_cluster.html">
+      <a href="../50_workshop_5_accelerating_sdlc/10_create_cluster.html">
           Create Cluster
           
             <i class="fas fa-check read-icon"></i>
@@ -2691,7 +2691,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/10_create_cluster/01_create_eks_cluster.html" title="Create EKS Cluster" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/10_create_cluster/01_create_eks_cluster.html">
+        <a href="../50_workshop_5_accelerating_sdlc/10_create_cluster/01_create_eks_cluster.html">
         Create EKS Cluster
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2725,7 +2725,7 @@
         
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc/15_deployment_strategies.html">
+      <a href="../50_workshop_5_accelerating_sdlc/15_deployment_strategies.html">
           Deployment Strategies
           
             <i class="fas fa-check read-icon"></i>
@@ -2750,7 +2750,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/01_recreate.html" title="Recreate" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/01_recreate.html">
+        <a href="../50_workshop_5_accelerating_sdlc/15_deployment_strategies/01_recreate.html">
         Recreate
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2771,7 +2771,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/02_rolling_update.html" title="Rolling Update" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/02_rolling_update.html">
+        <a href="../50_workshop_5_accelerating_sdlc/15_deployment_strategies/02_rolling_update.html">
         Rolling Update
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2792,7 +2792,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/03_blue_green.html" title="Blue / Green" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/03_blue_green.html">
+        <a href="../50_workshop_5_accelerating_sdlc/15_deployment_strategies/03_blue_green.html">
         Blue / Green
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2813,7 +2813,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/04_canary.html" title="Canary" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/04_canary.html">
+        <a href="../50_workshop_5_accelerating_sdlc/15_deployment_strategies/04_canary.html">
         Canary
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2847,7 +2847,7 @@
         active
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc/20_enable_gitops.html">
+      <a href="../50_workshop_5_accelerating_sdlc/20_enable_gitops.html">
           Enable GitOps
           
             <i class="fas fa-check read-icon"></i>
@@ -2872,7 +2872,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/20_enable_gitops/01_create_git_repo.html" title="Create Git Repository" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/20_enable_gitops/01_create_git_repo.html">
+        <a href="../50_workshop_5_accelerating_sdlc/20_enable_gitops/01_create_git_repo.html">
         Create Git Repository
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2893,7 +2893,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/20_enable_gitops/02_eksctl_enable_repo.html" title="Eksctl Enable Repo" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/20_enable_gitops/02_eksctl_enable_repo.html">
+        <a href="../50_workshop_5_accelerating_sdlc/20_enable_gitops/02_eksctl_enable_repo.html">
         Eksctl Enable Repo
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2927,7 +2927,7 @@
         
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc/30_install_appmesh.html">
+      <a href="../50_workshop_5_accelerating_sdlc/30_install_appmesh.html">
           Install App Mesh
           
             <i class="fas fa-check read-icon"></i>
@@ -2952,7 +2952,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/30_install_appmesh/01_install_app_mesh.html" title="Enable App Mesh eksctl Profile" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/30_install_appmesh/01_install_app_mesh.html">
+        <a href="../50_workshop_5_accelerating_sdlc/30_install_appmesh/01_install_app_mesh.html">
         Enable App Mesh eksctl Profile
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -2973,7 +2973,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/30_install_appmesh/02_sync_repo.html" title="Sync your repository and Kustomize the Profile" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/30_install_appmesh/02_sync_repo.html">
+        <a href="../50_workshop_5_accelerating_sdlc/30_install_appmesh/02_sync_repo.html">
         Sync your repository and Kustomize the Profile
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3007,7 +3007,7 @@
         
         
         ">
-      <a href="/50_workshop_5_accelerating_sdlc/40_progressive_delivery.html">
+      <a href="../50_workshop_5_accelerating_sdlc/40_progressive_delivery.html">
           Progressive Delivery
           
             <i class="fas fa-check read-icon"></i>
@@ -3032,7 +3032,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/01_install_podinfo.html" title="Install Podinfo demo app" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/01_install_podinfo.html">
+        <a href="../50_workshop_5_accelerating_sdlc/40_progressive_delivery/01_install_podinfo.html">
         Install Podinfo demo app
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3053,7 +3053,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/02_review_flagger.html" title="Review Flagger" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/02_review_flagger.html">
+        <a href="../50_workshop_5_accelerating_sdlc/40_progressive_delivery/02_review_flagger.html">
         Review Flagger
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3074,7 +3074,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/03_canary_release.html" title="Automated Canary Promotion" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/03_canary_release.html">
+        <a href="../50_workshop_5_accelerating_sdlc/40_progressive_delivery/03_canary_release.html">
         Automated Canary Promotion
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3095,7 +3095,7 @@
   
     
       <li data-nav-id="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/04_canary_rollback.html" title="Automated Canary Rollback" class="dd-item ">
-        <a href="/50_workshop_5_accelerating_sdlc/40_progressive_delivery/04_canary_rollback.html">
+        <a href="../50_workshop_5_accelerating_sdlc/40_progressive_delivery/04_canary_rollback.html">
         Automated Canary Rollback
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3136,7 +3136,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml.html">
+      <a href="../60_workshop_6_ml.html">
           Workshop Module 6:  Machine Learning on AWS EKS
           
             <i class="fas fa-check read-icon"></i>
@@ -3167,7 +3167,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/00_prerequisites.md.html">
+      <a href="../60_workshop_6_ml/00_prerequisites.md.html">
           Prerequisites
           
             <i class="fas fa-check read-icon"></i>
@@ -3192,7 +3192,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/01_create_workspace.html" title="AWS Workshop Portal" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/01_create_workspace.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/01_create_workspace.html">
         AWS Workshop Portal
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3213,7 +3213,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/10_install_eksctl.html" title="Install eksctl" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/10_install_eksctl.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/10_install_eksctl.html">
         Install eksctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3234,7 +3234,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/20_install_kubectl.html" title="Install kubectl" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/20_install_kubectl.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/20_install_kubectl.html">
         Install kubectl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3255,7 +3255,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/30_install_fluxctl.html" title="Install fluxctl" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/30_install_fluxctl.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/30_install_fluxctl.html">
         Install fluxctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3276,7 +3276,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/40_install_kustomize.html" title="Install kustomize" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/40_install_kustomize.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/40_install_kustomize.html">
         Install kustomize
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3297,7 +3297,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/50_install_aws_iam_auth.html" title="Install aws iam authenticator" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/50_install_aws_iam_auth.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/50_install_aws_iam_auth.html">
         Install aws iam authenticator
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3318,7 +3318,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/60_add_iam_role.html" title="Add the Required IAM Role" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/60_add_iam_role.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/60_add_iam_role.html">
         Add the Required IAM Role
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3339,7 +3339,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/00_prerequisites.md/70_workspace_iam.html" title="Update IAM settings for your Workspace" class="dd-item ">
-        <a href="/60_workshop_6_ml/00_prerequisites.md/70_workspace_iam.html">
+        <a href="../60_workshop_6_ml/00_prerequisites.md/70_workspace_iam.html">
         Update IAM settings for your Workspace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3373,7 +3373,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/05_setup.html">
+      <a href="../60_workshop_6_ml/05_setup.html">
           Cloud9 Setup
           
             <i class="fas fa-check read-icon"></i>
@@ -3398,7 +3398,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/05_setup/01_git-config-ssh-key.html" title="Cloud9 setup" class="dd-item ">
-        <a href="/60_workshop_6_ml/05_setup/01_git-config-ssh-key.html">
+        <a href="../60_workshop_6_ml/05_setup/01_git-config-ssh-key.html">
         Cloud9 setup
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3432,7 +3432,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/10_create_cluster.html">
+      <a href="../60_workshop_6_ml/10_create_cluster.html">
           Create Cluster
           
             <i class="fas fa-check read-icon"></i>
@@ -3457,7 +3457,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/10_create_cluster/01_create_eks_cluster.html" title="Create EKS Cluster" class="dd-item ">
-        <a href="/60_workshop_6_ml/10_create_cluster/01_create_eks_cluster.html">
+        <a href="../60_workshop_6_ml/10_create_cluster/01_create_eks_cluster.html">
         Create EKS Cluster
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3491,7 +3491,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/20_enable_gitops.html">
+      <a href="../60_workshop_6_ml/20_enable_gitops.html">
           Enable GitOps
           
             <i class="fas fa-check read-icon"></i>
@@ -3516,7 +3516,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/20_enable_gitops/01_create_git_repo.html" title="Create Git Repository" class="dd-item ">
-        <a href="/60_workshop_6_ml/20_enable_gitops/01_create_git_repo.html">
+        <a href="../60_workshop_6_ml/20_enable_gitops/01_create_git_repo.html">
         Create Git Repository
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3537,7 +3537,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/20_enable_gitops/02_eksctl_enable_repo.html" title="Eksctl Enable Repo" class="dd-item ">
-        <a href="/60_workshop_6_ml/20_enable_gitops/02_eksctl_enable_repo.html">
+        <a href="../60_workshop_6_ml/20_enable_gitops/02_eksctl_enable_repo.html">
         Eksctl Enable Repo
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3571,7 +3571,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/30_deploy_appdev_profile.html">
+      <a href="../60_workshop_6_ml/30_deploy_appdev_profile.html">
           Deploy Application Development Profile
           
             <i class="fas fa-check read-icon"></i>
@@ -3596,7 +3596,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/30_deploy_appdev_profile/01_app_dev.html" title="Deploy app-dev profile" class="dd-item ">
-        <a href="/60_workshop_6_ml/30_deploy_appdev_profile/01_app_dev.html">
+        <a href="../60_workshop_6_ml/30_deploy_appdev_profile/01_app_dev.html">
         Deploy app-dev profile
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3630,7 +3630,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/40_kubeflow.html">
+      <a href="../60_workshop_6_ml/40_kubeflow.html">
           Kubeflow
           
             <i class="fas fa-check read-icon"></i>
@@ -3655,7 +3655,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/40_kubeflow/01_install_kubeflow.html" title="Deploy Kubeflow" class="dd-item ">
-        <a href="/60_workshop_6_ml/40_kubeflow/01_install_kubeflow.html">
+        <a href="../60_workshop_6_ml/40_kubeflow/01_install_kubeflow.html">
         Deploy Kubeflow
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3689,7 +3689,7 @@
         
         
         ">
-      <a href="/60_workshop_6_ml/50_titanic_sample_application.html">
+      <a href="../60_workshop_6_ml/50_titanic_sample_application.html">
           Example application - Titanic Survival Prediction
           
             <i class="fas fa-check read-icon"></i>
@@ -3714,7 +3714,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/50_titanic_sample_application/01_aws_k8s-setup.html" title="AWS and Kubenetes Environment Setup" class="dd-item ">
-        <a href="/60_workshop_6_ml/50_titanic_sample_application/01_aws_k8s-setup.html">
+        <a href="../60_workshop_6_ml/50_titanic_sample_application/01_aws_k8s-setup.html">
         AWS and Kubenetes Environment Setup
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3735,7 +3735,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/50_titanic_sample_application/02_kubeflow_ui.html" title="Kubeflow UI" class="dd-item ">
-        <a href="/60_workshop_6_ml/50_titanic_sample_application/02_kubeflow_ui.html">
+        <a href="../60_workshop_6_ml/50_titanic_sample_application/02_kubeflow_ui.html">
         Kubeflow UI
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3756,7 +3756,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/50_titanic_sample_application/03_build-model.html" title="Build Model" class="dd-item ">
-        <a href="/60_workshop_6_ml/50_titanic_sample_application/03_build-model.html">
+        <a href="../60_workshop_6_ml/50_titanic_sample_application/03_build-model.html">
         Build Model
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3777,7 +3777,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/50_titanic_sample_application/04_build-pipeline.html" title="Build Pipeline" class="dd-item ">
-        <a href="/60_workshop_6_ml/50_titanic_sample_application/04_build-pipeline.html">
+        <a href="../60_workshop_6_ml/50_titanic_sample_application/04_build-pipeline.html">
         Build Pipeline
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3798,7 +3798,7 @@
   
     
       <li data-nav-id="/60_workshop_6_ml/50_titanic_sample_application/05_run.html" title="Run Pipeline" class="dd-item ">
-        <a href="/60_workshop_6_ml/50_titanic_sample_application/05_run.html">
+        <a href="../60_workshop_6_ml/50_titanic_sample_application/05_run.html">
         Run Pipeline
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3839,7 +3839,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud.html">
+      <a href="../70_workshop_7_multicloud.html">
           Workshop Module 7: Cluster Management using Operators
           
             <i class="fas fa-check read-icon"></i>
@@ -3870,7 +3870,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/10_prerequisites.html">
+      <a href="../70_workshop_7_multicloud/10_prerequisites.html">
           Prerequisites for Workshop
           
             <i class="fas fa-check read-icon"></i>
@@ -3895,7 +3895,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/10_workspace.html" title="Open Workspace" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/10_workspace.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/10_workspace.html">
         Open Workspace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3916,7 +3916,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/11_install_eksctl.html" title="Install eksctl" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/11_install_eksctl.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/11_install_eksctl.html">
         Install eksctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3937,7 +3937,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/12_install_kubectl.html" title="Install kubectl" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/12_install_kubectl.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/12_install_kubectl.html">
         Install kubectl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3958,7 +3958,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/13_install_helm.html" title="Install helm" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/13_install_helm.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/13_install_helm.html">
         Install helm
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -3979,7 +3979,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/14_install_fluxctl.html" title="Install fluxctl" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/14_install_fluxctl.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/14_install_fluxctl.html">
         Install fluxctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4000,7 +4000,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/15_install_kustomize.html" title="Install kustomize" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/15_install_kustomize.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/15_install_kustomize.html">
         Install kustomize
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4021,7 +4021,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/16_install_aws-iam.html" title="Install AWS IAM" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/16_install_aws-iam.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/16_install_aws-iam.html">
         Install AWS IAM
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4042,7 +4042,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/17_add_the_role.html" title="Add the Required IAM Role" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/17_add_the_role.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/17_add_the_role.html">
         Add the Required IAM Role
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4063,7 +4063,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/18_workspaceiam.html" title="Update IAM settings for your Workspace" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/18_workspaceiam.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/18_workspaceiam.html">
         Update IAM settings for your Workspace
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4084,7 +4084,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/19_direnv.html" title="Install direnv" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/19_direnv.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/19_direnv.html">
         Install direnv
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4105,7 +4105,7 @@
   
     
       <li data-nav-id="/70_workshop_7_multicloud/10_prerequisites/20_clusterctl.html" title="Install clusterctl" class="dd-item ">
-        <a href="/70_workshop_7_multicloud/10_prerequisites/20_clusterctl.html">
+        <a href="../70_workshop_7_multicloud/10_prerequisites/20_clusterctl.html">
         Install clusterctl
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4139,7 +4139,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/15_setup_git_repo.html">
+      <a href="../70_workshop_7_multicloud/15_setup_git_repo.html">
           Set up git repo
           
             <i class="fas fa-check read-icon"></i>
@@ -4167,7 +4167,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/20_credentials.html">
+      <a href="../70_workshop_7_multicloud/20_credentials.html">
           Set up credentials
           
             <i class="fas fa-check read-icon"></i>
@@ -4195,7 +4195,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/30_bootstrap_management_cluster.html">
+      <a href="../70_workshop_7_multicloud/30_bootstrap_management_cluster.html">
           Bootstrap Management Cluster
           
             <i class="fas fa-check read-icon"></i>
@@ -4223,7 +4223,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/31_add_yamls.html">
+      <a href="../70_workshop_7_multicloud/31_add_yamls.html">
           Add YAMLs
           
             <i class="fas fa-check read-icon"></i>
@@ -4251,7 +4251,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/40_gitops_enable_clusters.html">
+      <a href="../70_workshop_7_multicloud/40_gitops_enable_clusters.html">
           GitOps Enable Clusters
           
             <i class="fas fa-check read-icon"></i>
@@ -4279,7 +4279,7 @@
         
         
         ">
-      <a href="/70_workshop_7_multicloud/50_cleanup.html">
+      <a href="../70_workshop_7_multicloud/50_cleanup.html">
           Cleanup
           
             <i class="fas fa-check read-icon"></i>
@@ -4314,7 +4314,7 @@
         
         
         ">
-      <a href="/100_cleanup.html">
+      <a href="../100_cleanup.html">
           Cleanup
           
             <i class="fas fa-check read-icon"></i>
@@ -4339,7 +4339,7 @@
   
     
       <li data-nav-id="/100_cleanup/10_cleanup.html" title="Cleanup" class="dd-item ">
-        <a href="/100_cleanup/10_cleanup.html">
+        <a href="../100_cleanup/10_cleanup.html">
         Cleanup
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -4441,7 +4441,7 @@
             
           
           
-            <a href='/'>GitOps on EKS with Weaveworks</a> > <a href='/50_workshop_5_accelerating_sdlc.html'>Workshop Module 5: Accelerating the Software Development Lifecycle</a> > Enable GitOps
+            <a href='../'>GitOps on EKS with Weaveworks</a> > <a href='../50_workshop_5_accelerating_sdlc.html'>Workshop Module 5: Accelerating the Software Development Lifecycle</a> > Enable GitOps
           
         
           
@@ -7230,10 +7230,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/50_workshop_5_accelerating_sdlc/15_deployment_strategies/04_canary.html" title="Canary"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../50_workshop_5_accelerating_sdlc/15_deployment_strategies/04_canary.html" title="Canary"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/50_workshop_5_accelerating_sdlc/20_enable_gitops/01_create_git_repo.html" title="Create Git Repository" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../50_workshop_5_accelerating_sdlc/20_enable_gitops/01_create_git_repo.html" title="Create Git Repository" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -7243,19 +7243,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1594895504"></script>
-    <script src="/js/perfect-scrollbar.min.js?1594895504"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1594895504"></script>
-    <script src="/js/jquery.sticky.js?1594895504"></script>
-    <script src="/js/featherlight.min.js?1594895504"></script>
-    <script src="/js/highlight.pack.js?1594895504"></script>
+    <script src="../js/clipboard.min.js?1594895653"></script>
+    <script src="../js/perfect-scrollbar.min.js?1594895653"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1594895653"></script>
+    <script src="../js/jquery.sticky.js?1594895653"></script>
+    <script src="../js/featherlight.min.js?1594895653"></script>
+    <script src="../js/highlight.pack.js?1594895653"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1594895504"></script>
-    <script src="/js/learn.js?1594895504"></script>
-    <script src="/js/hugo-learn.js?1594895504"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1594895653"></script>
+    <script src="../js/learn.js?1594895653"></script>
+    <script src="../js/hugo-learn.js?1594895653"></script>
 
-    <link href="/mermaid/mermaid.css?1594895504" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1594895504"></script>
+    <link href="../mermaid/mermaid.css?1594895653" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1594895653"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
