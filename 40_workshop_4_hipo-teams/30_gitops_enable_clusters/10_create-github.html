@@ -12,21 +12,21 @@
     <title>Create GitHub Repository :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
 
     
-    <link href="../../css/nucleus.css?1596029144" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1596029144" rel="stylesheet">
-    <link href="../../css/hybrid.css?1596029144" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1596029144" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1596029144" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1596029144" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1596029144" rel="stylesheet">
-    <link href="../../css/theme.css?1596029144" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1596029144" rel="stylesheet">
+    <link href="../../css/nucleus.css?1596111677" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1596111677" rel="stylesheet">
+    <link href="../../css/hybrid.css?1596111677" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1596111677" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1596111677" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1596111677" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1596111677" rel="stylesheet">
+    <link href="../../css/theme.css?1596111677" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1596111677" rel="stylesheet">
     
-    <link href="../../css/theme-mine.css?1596029144" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1596111677" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1596029144"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1596111677"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1596029144"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1596029144"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1596111677"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1596111677"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1596029144"></script>
+<script type="text/javascript" src="../../js/search.js?1596111677"></script>
 
     
   </div>
@@ -4521,9 +4521,16 @@
 
 <p>You will also want to add your ssh. Instructions to do so <a href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account" target="_blank">are here</a>.</p>
 
-<p>The pbcopy will not work on amazon linux, so instead just run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat ~/.ssh/id_rsa.pub
-<span style="color:#75715e"># just copy content to clip manually using mouse/trackpad</span></code></pre></div>
+<p>To create a new ssh key, run the following. Substitute your github email address where specified.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span></code></pre></div>
+<p>Start the ssh-agent in the background.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></div>
+<p>Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-add ~/.ssh/id_rsa</code></pre></div>
+<p>Then run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat ~/.ssh/id_rsa.pub</code></pre></div>
+<p>You can then create a deploy key in your repository by going to: <code>Settings &gt; Deploy keys</code>. Click on <code>Add deploy key</code>, and check <code>Allow write access</code>. Then paste your public key and click <code>Add key</code>. This will allow us to clone this repo to our Cloud9 environment.</p>
+
 
 <footer class="footline">
 	
@@ -7302,19 +7309,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1596029144"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1596029144"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1596029144"></script>
-    <script src="../../js/jquery.sticky.js?1596029144"></script>
-    <script src="../../js/featherlight.min.js?1596029144"></script>
-    <script src="../../js/highlight.pack.js?1596029144"></script>
+    <script src="../../js/clipboard.min.js?1596111677"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1596111677"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1596111677"></script>
+    <script src="../../js/jquery.sticky.js?1596111677"></script>
+    <script src="../../js/featherlight.min.js?1596111677"></script>
+    <script src="../../js/highlight.pack.js?1596111677"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1596029144"></script>
-    <script src="../../js/learn.js?1596029144"></script>
-    <script src="../../js/hugo-learn.js?1596029144"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1596111677"></script>
+    <script src="../../js/learn.js?1596111677"></script>
+    <script src="../../js/hugo-learn.js?1596111677"></script>
 
-    <link href="../../mermaid/mermaid.css?1596029144" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1596029144"></script>
+    <link href="../../mermaid/mermaid.css?1596111677" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1596111677"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -39,7 +39,7 @@ Create a amazon-cloudwatch folder in our repo:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/40_workshop_4_hipo-teams/50_install_container_insights/30_verify_container_insights.html</guid>
-      <description>Now that Container Insights with additional Prometheus metriocs collection is setup we should start to see metrics appear in CloudWatch.
+      <description>Now that Container Insights with additional Prometheus metrics collection is setup we should start to see metrics appear in CloudWatch.
 Go to the AWS Console and open CloudWatch.
 Now click Metrics on the left pane. On the right portion of the page you should now see ContainerInsights and ContainerInsights/Prometheus listed:</description>
     </item>
@@ -50,7 +50,7 @@ Now click Metrics on the left pane. On the right portion of the page you should 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/40_workshop_4_hipo-teams/50_install_container_insights/40_explore_container_insights.html</guid>
-      <description>We will now explore some of the observability that Conatiner Insights gives us. This is a very quick look at CloudWatch&amp;hellip;.it can do a lot!
+      <description>We will now explore some of the observability that Container Insights gives us. This is a very quick look at CloudWatch&amp;hellip;.it can do a lot!
 In the AWS Console make sure you are in CloudWatch (which you will probably be from the last section).
 On the left navigation pane click Resources under Container Insights.
 Click any of the items from the list of Resources and you will see a performance dashboard open giving you an insight into the performance:</description>

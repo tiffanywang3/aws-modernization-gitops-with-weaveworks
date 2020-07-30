@@ -73,7 +73,7 @@ aws appmesh list-virtual-routers --mesh-name=apps The output should be similar t
       <guid>/40_workshop_4_hipo-teams/60_install-pod-info/60_test_routing.html</guid>
       <description>Now lets test the routing of requests to the backend PodInfo services. According to the routing rules we created request should be split roughly 50:50 between v1 and v2.
 We&amp;rsquo;ll need to exec onto the frontend container:
-# Get the frontend pods name export FRONTEND_NAME=$(kubectl get pods -n apps -l app=frontend-podinfo -o jsonpath=&amp;#39;{.items[].metadata.name}&amp;#39;) # Exec onto the pod kubectl -n apps exec -it ${FRONTEND_NAME} -- sh We&amp;rsquo;ll use curl to make a request to the backend-podinfo.</description>
+# Get the frontend pod&amp;#39;s name export FRONTEND_NAME=$(kubectl get pods -n apps -l app=frontend-podinfo -o jsonpath=&amp;#39;{.items[].metadata.name}&amp;#39;) # Exec into the pod kubectl -n apps exec -it ${FRONTEND_NAME} -- sh We&amp;rsquo;ll use curl to make a request to the backend-podinfo.</description>
     </item>
     
     <item>

@@ -556,7 +556,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s http
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/40_workshop_4_hipo-teams/50_install_container_insights/30_verify_container_insights.html</guid>
-      <description>Now that Container Insights with additional Prometheus metriocs collection is setup we should start to see metrics appear in CloudWatch.
+      <description>Now that Container Insights with additional Prometheus metrics collection is setup we should start to see metrics appear in CloudWatch.
 Go to the AWS Console and open CloudWatch.
 Now click Metrics on the left pane. On the right portion of the page you should now see ContainerInsights and ContainerInsights/Prometheus listed:</description>
     </item>
@@ -797,7 +797,7 @@ add in ~/.aws/config: cat &amp;lt;&amp;lt; EoF &amp;gt;&amp;gt; ~/.aws/config [p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/40_workshop_4_hipo-teams/50_install_container_insights/40_explore_container_insights.html</guid>
-      <description>We will now explore some of the observability that Conatiner Insights gives us. This is a very quick look at CloudWatch&amp;hellip;.it can do a lot!
+      <description>We will now explore some of the observability that Container Insights gives us. This is a very quick look at CloudWatch&amp;hellip;.it can do a lot!
 In the AWS Console make sure you are in CloudWatch (which you will probably be from the last section).
 On the left navigation pane click Resources under Container Insights.
 Click any of the items from the list of Resources and you will see a performance dashboard open giving you an insight into the performance:</description>
@@ -937,7 +937,7 @@ aws appmesh list-virtual-routers --mesh-name=apps The output should be similar t
       <guid>/40_workshop_4_hipo-teams/60_install-pod-info/60_test_routing.html</guid>
       <description>Now lets test the routing of requests to the backend PodInfo services. According to the routing rules we created request should be split roughly 50:50 between v1 and v2.
 We&amp;rsquo;ll need to exec onto the frontend container:
-# Get the frontend pods name export FRONTEND_NAME=$(kubectl get pods -n apps -l app=frontend-podinfo -o jsonpath=&amp;#39;{.items[].metadata.name}&amp;#39;) # Exec onto the pod kubectl -n apps exec -it ${FRONTEND_NAME} -- sh We&amp;rsquo;ll use curl to make a request to the backend-podinfo.</description>
+# Get the frontend pod&amp;#39;s name export FRONTEND_NAME=$(kubectl get pods -n apps -l app=frontend-podinfo -o jsonpath=&amp;#39;{.items[].metadata.name}&amp;#39;) # Exec into the pod kubectl -n apps exec -it ${FRONTEND_NAME} -- sh We&amp;rsquo;ll use curl to make a request to the backend-podinfo.</description>
     </item>
     
     <item>
